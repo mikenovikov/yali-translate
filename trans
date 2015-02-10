@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+namespace {
+	$yali_path = getenv('HOME') . '/.yali';
+	set_include_path(get_include_path() . ":$yali_path");
+	require 'vendor/autoload.php';
+	$app = new Yali\Application();
+}
