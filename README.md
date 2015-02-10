@@ -16,7 +16,7 @@
 	```php
 		return [
 			'TRANS_KEY' => 'КЛЮЧ_ПЕРЕВОДЧИКА',
-      'DICT_KEY' => 'КЛЮЧ_СЛОВАРЯ'
+			'DICT_KEY' => 'КЛЮЧ_СЛОВАРЯ'
 		];
 	```
 	Ключи генерируем тут [Яндек.Перевочик](https://tech.yandex.ru/keys/get/?service=trnsl) и тут
