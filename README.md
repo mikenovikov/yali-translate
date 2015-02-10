@@ -1,9 +1,11 @@
 # yali-translate
 Переводчик для Ubuntu(Linux)
 
+![YaLi-Translate One Word](https://github.com/mikenovikov/yali-translate/blob/master/resources/example-word.jpg)
 ##Небольшой онлайн-переводчик, для линукса.
 Использует сервисы Яндекс.Переводчик и Яндекс.Словарь.
 
+![YaLi-Translate Sentence Word](https://github.com/mikenovikov/yali-translate/blob/master/resources/example-sentence.jpg)
 
 
 ## Установка.
