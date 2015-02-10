@@ -11,7 +11,7 @@
 - Так же должны быть установлены  **php5 и composer**
 - Любым убодным способом копировать все в **/home/username/.yali**
 - Открыть терминал перейти в папку **.yali**
-- Создать в этой папке файл .env.php в него добавить:
+- Создать в этой папке файл **.env.php** в него добавить:
 
 	```php
 		return [
@@ -29,3 +29,5 @@
 
 ## Советую немного прокачать notify-osd если оболочка Unity.
 Ссылка на прокачку [CLOSABLE / MOVABLE NOTIFYOSD ](http://www.webupd8.org/2012/06/closable-movable-notifyosd.html)
+
+### Вдохновение брал отсюда [habr](http://habrahabr.ru/post/137215/)
