@@ -14,7 +14,8 @@ namespace Yali\Translators
 			return [
 				'key'  => getenv('DICT_KEY'),
 				'lang' => $this->lang,
-				'text' => $this->term
+				'text' => $this->term,
+				'flags' => 4
 			];
 		}
 	}
