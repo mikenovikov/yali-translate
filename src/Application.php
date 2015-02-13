@@ -50,7 +50,7 @@ namespace Yali
 		public static function getArgs()
 		{
 			$argv = $_SERVER['argv'];
-			return isset($argv[1]) && !empty($argv[1]) ? trim($argv[1]) : exit('No word for translation');
+			return isset($argv[1]) && !empty($argv[1]) ? trim($argv[1], " \t\n\r\0\x0B,.-_'\";:!?") : exit('No word for translation');
 		}
 
 		private function translate()
