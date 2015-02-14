@@ -11,6 +11,7 @@ namespace Yali
 	use Yali\Transformers\YandexTranslateResponse;
 	use Yali\Translators\Dict;
 	use Yali\Translators\Translate;
+	use Illuminate\Database\Schema\Blueprint;
 
 	class Application extends Container
 	{
@@ -40,10 +41,38 @@ namespace Yali
 
 		private function setUpDatabase()
 		{
+			$fs = $this['filesystem'];
+			$dbPath = $this['path.database'].'/yali.sqlite';
+			if(!$fs->exists($dbPath))
+			{
+				$fs->put($dbPath, '');
+			}
 			$capsule = new Capsule;
 			$capsule->addConnection($this['filesystem']->getRequire($this['path.database'] . '/config.php'));
 			$capsule->setAsGlobal();
 			$capsule->bootEloquent();
+			if(!Capsule::schema()->hasTable('words') || !Capsule::schema()->hasTable('sentences'))
+			{
+				$this->prepareNewDb();
+			}
+		}
+
+		protected function prepareNewDb()
+		{
+			Capsule::schema()->create('words', function(Blueprint $table)
+			{
+				$table->increments('id');
+				$table->string('term');
+				$table->text('translated');
+				$table->index('term', 'idx_words');
+			});
+			Capsule::schema()->create('sentences', function(Blueprint $table)
+			{
+				$table->increments('id');
+				$table->string('term');
+				$table->text('translated');
+				$table->index('term', 'idx_sentences');
+			});
 		}
 
 		public static function getArgs()
