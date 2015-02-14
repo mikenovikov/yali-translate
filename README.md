@@ -26,10 +26,10 @@
 	Ключи генерируем тут [Яндек.Перевочик](https://tech.yandex.ru/keys/get/?service=trnsl) и тут
 	[Яндекс.Словарь](https://tech.yandex.ru/keys/get/?service=dict)
 - Выполнить **composer install**
-- Далее дать нужные права **chmod +x seltr trans**
-- Переместить файл **seltr** в **/usr/local/bin** выполнив **sudo mv seltr /usr/local/bin** или в любую другую, при условии что она есть в $PATH
+- Далее дать нужные права **chmod +x trans**
+- Переместить файл **trans** в **/usr/local/bin** выполнив **sudo mv trans /usr/local/bin** или в любую другую, при условии что она есть в $PATH
 - Далее идем в настройки System Settings -> Keyboard -> Shortcuts
-- Создаем новый shortcut в поле Command вписываем путь до seltr (**/usr/local/bin/seltr**)
+- Создаем новый shortcut в поле Command вписываем путь до **trans** (**/usr/local/bin/trans**)
 
 ## Советую немного прокачать notify-osd если оболочка Unity.
 Ссылка на прокачку [CLOSABLE / MOVABLE NOTIFYOSD ](http://www.webupd8.org/2012/06/closable-movable-notifyosd.html)
