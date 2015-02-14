@@ -17,7 +17,8 @@ namespace Yali\Transformers
 			'pronoun'     => 'местоим',
 			'numeral'     => 'числ',
 			'preposition' => 'предл',
-			'particle'    => 'част'
+			'particle'    => 'част',
+			'interjection'=> 'межд'
 		];
 
 		public function transform($term)
