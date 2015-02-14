@@ -6,4 +6,5 @@ namespace {
 	set_include_path(get_include_path() . ":$yali_path");
 	require 'vendor/autoload.php';
 	$app = new Yali\Application();
+	exec('notify-send -i $HOME/.yali/resources/yandex-translate.png -u critical "Yandex-Translate" "' . addslashes($app->translate()).'"');
 }

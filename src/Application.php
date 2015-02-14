@@ -18,7 +18,6 @@ namespace Yali
 		{
 			$this->setUpEnvironment();
 			$this->setUpDatabase();
-			$this->translate();
 		}
 
 		private function setUpEnvironment()
@@ -49,29 +48,33 @@ namespace Yali
 
 		public static function getArgs()
 		{
-			$argv = $_SERVER['argv'];
-			return isset($argv[1]) && !empty($argv[1]) ? trim($argv[1], " \t\n\r\0\x0B,.-_'\";:!?") : exit('No word for translation');
+			$terms = [];
+			exec('xsel -o | sed "s/[\"\'<>]//g"', $terms);
+
+
+			return trim(implode(' ', $terms), " \t\n\r\0\x0B,.-_'\";:!?"); 
+
 		}
 
-		private function translate()
+		public function translate()
 		{
 			$term = static::getArgs();
 
 			$words = explode(' ', $term);
 			if (count($words) === 1)
 			{
-				echo $this->make('dict')->translate($term);
+				return $this->make('dict')->translate($term);
 			}
 			else
 			{
 				if (count($words) > 1 && mb_strlen($term) <= 255)
 				{
-					echo $this->make('trans')->translate($term);
+					return $this->make('trans')->translate($term);
 				}
 				else
 				{
-					echo $this->make('trans')->translate($term, false);
-					exit(0);
+					return $this->make('trans')->translate($term, false);
+					//exit(0);
 				}
 			}
 		}

@@ -1,1 +1,0 @@
-notify-send -i $HOME/.yali/resources/yandex-translate.png -u critical "Yandex-Translate" "$($HOME/.yali/trans "$(xsel -o | sed "s/[\"'<>]//g")")"
