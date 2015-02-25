@@ -18,7 +18,8 @@ namespace Yali\Transformers
 			'numeral'     => 'числ',
 			'preposition' => 'предл',
 			'particle'    => 'част',
-			'interjection'=> 'межд'
+			'interjection'=> 'межд',
+			'conjunction' => 'союз'
 		];
 
 		public function transform($term)
